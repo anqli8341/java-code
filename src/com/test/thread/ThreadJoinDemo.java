@@ -7,13 +7,13 @@ public class ThreadJoinDemo {
   }
 
   public static void demo1() {
-    Thread A = new Thread(new Runnable() {
-      public void run() {
+    Thread A = new Thread(()-> {
+//      public void run() {
         printNumber("A");
-      }
+//      }
     });
-    Thread B = new Thread(new Runnable() {
-      public void run() {
+    Thread B = new Thread(()-> {
+//      public void run() {
         System.out.println("B 开始等待  A");
         try {
           A.join();
@@ -21,7 +21,7 @@ public class ThreadJoinDemo {
           e.printStackTrace();
         }
         printNumber("B");
-      }
+//      }
     });
     A.start();
     B.start();

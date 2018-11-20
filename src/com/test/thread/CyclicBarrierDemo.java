@@ -16,10 +16,10 @@ public class CyclicBarrierDemo {
     final Random random = new Random();
     for (char runnerName = 'A'; runnerName <= 'C'; runnerName++) {
       final String rN = String.valueOf(runnerName);
-      new Thread(new Runnable() {
+      new Thread(()-> {
 
-        @Override
-        public void run() {
+//        @Override
+//        public void run() {
           // TODO Auto-generated method stub
           long prepareTime = random.nextInt(10000) + 100;
           System.out.println(rN + " is preparing for time:" + prepareTime);
@@ -37,7 +37,7 @@ public class CyclicBarrierDemo {
             e.printStackTrace();
           }
           System.out.println(rN + " starts running ");
-        }
+//        }
 
       }).start();
     }

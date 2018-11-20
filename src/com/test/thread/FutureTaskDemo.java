@@ -10,10 +10,10 @@ public class FutureTaskDemo {
   }
 
   private static void doTaskWithResultInWorker() {
-    Callable<Integer> callable = new Callable<Integer>() {
-
-      @Override
-      public Integer call() throws Exception {
+    Callable<Integer> callable =()-> {
+//
+//      @Override
+//      public Integer call() throws Exception {
         // TODO Auto-generated method stub
         System.out.println(" Task starts ");
         Thread.sleep(1000);
@@ -23,7 +23,7 @@ public class FutureTaskDemo {
         }
         System.out.println("Task finished and return result");
         return result;
-      }
+//      }
 
     };
     FutureTask<Integer> futureTask = new FutureTask<Integer>(callable);

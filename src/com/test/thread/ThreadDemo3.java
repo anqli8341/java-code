@@ -8,9 +8,9 @@ public class ThreadDemo3 {
 
   private static void demo3() {
     Object lock = new Object();
-    Thread A = new Thread(new Runnable() {
-      @Override
-      public void run() {
+    Thread A = new Thread(() ->{
+//      @Override
+//      public void run() {
         // TODO Auto-generated method stub
         System.out.println("INFO: A 等待锁");
         synchronized (lock) {
@@ -23,7 +23,7 @@ public class ThreadDemo3 {
           } catch (InterruptedException e) {
             e.printStackTrace();
           }
-        }
+//        }
         System.out.println("INFO: 有人唤醒了A，A重新获得锁 lock");
         System.out.println("A2");
         System.out.println("A3");
@@ -31,10 +31,10 @@ public class ThreadDemo3 {
       }
 
     });
-    Thread B = new Thread(new Runnable() {
+    Thread B = new Thread(()-> {
 
-      @Override
-      public void run() {
+//      @Override
+//      public void run() {
         // TODO Auto-generated method stub
         System.out.println("INFO: B 等待锁");
         synchronized (lock) {
@@ -45,7 +45,7 @@ public class ThreadDemo3 {
           System.out.println("INFO: B 打印完毕，调用notify方法唤醒A");
           lock.notify();
         }
-      }
+//      }
 
     });
     A.start();

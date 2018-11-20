@@ -16,15 +16,15 @@ public class ThreadDemo1 {
   }
 
   public static void demo1() {
-    Thread A = new Thread(new Runnable() {
-      public void run() {
+    Thread A = new Thread(()-> {
+//      public void run() {
         printNumber("A");
-      }
+//      }
     });
-    Thread B = new Thread(new Runnable() {
-      public void run() {
+    Thread B = new Thread(()-> {
+//      public void run() {
         printNumber("B");
-      }
+//      }
     });
     A.start();
     B.start();
