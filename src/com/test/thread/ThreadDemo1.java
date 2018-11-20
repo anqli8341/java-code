@@ -1,16 +1,15 @@
 /**
- * 
+ *
  */
 package com.test.thread;
 
 /**
  * @author anquan li
- *
  */
 public class ThreadDemo1 {
 
   /**
-   * 
+   *
    */
   public ThreadDemo1() {
     // TODO Auto-generated constructor stub
